@@ -1,0 +1,44 @@
+[
+    {
+        "key": 1,
+        "name": "Casual backpack",
+        "img": "https://i.ibb.co/xh0Hw8H/shutterstock-156085703-640x1000-70822-1465280950.jpg",
+        "price": 120,
+        "description": "We will have another page on the top navigation bar (header) mentioning explore (you can give it a meaningful name based on your website). Clicking on the link will take the user to the explore page. On this page, users will see all the products you have. This means, the user will see at least 10 products on this page. Each item will have a name, description, image, price and button. Once a user clicks on this button, it will take the user to the purchase page"
+    },
+    {
+        "key": 2,
+        "name": "Casual laptop backpack",
+        "img": "https://i.ibb.co/dk6J9Tx/shutterstock-152337689-640x1000-1-09762-1465280950.jpg",
+        "price": 130,
+        "description": "We will have another page on the top navigation bar (header) mentioning explore (you can give it a meaningful name based on your website). Clicking on the link will take the user to the explore page. On this page, users will see all the products you have. This means, the user will see at least 10 products on this page. Each item will have a name, description, image, price and button. Once a user clicks on this button, it will take the user to the purchase page"
+    },
+    {
+        "key": 3,
+        "name": "Casual Mouse backpack",
+        "img": "https://i.ibb.co/xh0Hw8H/shutterstock-156085703-640x1000-70822-1465280950.jpg",
+        "price": 140,
+        "description": "We will have another page on the top navigation bar (header) mentioning explore (you can give it a meaningful name based on your website). Clicking on the link will take the user to the explore page. On this page, users will see all the products you have. This means, the user will see at least 10 products on this page. Each item will have a name, description, image, price and button. Once a user clicks on this button, it will take the user to the purchase page"
+    },
+    {
+        "key": 4,
+        "name": "Backpack",
+        "img": "https://i.ibb.co/dk6J9Tx/shutterstock-152337689-640x1000-1-09762-1465280950.jpg",
+        "price": 150,
+        "description": "We will have another page on the top navigation bar (header) mentioning explore (you can give it a meaningful name based on your website). Clicking on the link will take the user to the explore page. On this page, users will see all the products you have. This means, the user will see at least 10 products on this page. Each item will have a name, description, image, price and button. Once a user clicks on this button, it will take the user to the purchase page"
+    },
+    {
+        "key": 5,
+        "name": "Casual Bag",
+        "img": "https://i.ibb.co/d2hgP8T/shutterstock-165063185-640x1000-91781-1465280950.jpg",
+        "price": 160,
+        "description": "We will have another page on the top navigation bar (header) mentioning explore (you can give it a meaningful name based on your website). Clicking on the link will take the user to the explore page. On this page, users will see all the products you have. This means, the user will see at least 10 products on this page. Each item will have a name, description, image, price and button. Once a user clicks on this button, it will take the user to the purchase page"
+    },
+    {
+        "key": 6,
+        "name": "Backpack",
+        "img": "https://i.ibb.co/d2hgP8T/shutterstock-165063185-640x1000-91781-1465280950.jpg",
+        "price": 170,
+        "description": "We will have another page on the top navigation bar (header) mentioning explore (you can give it a meaningful name based on your website). Clicking on the link will take the user to the explore page. On this page, users will see all the products you have. This means, the user will see at least 10 products on this page. Each item will have a name, description, image, price and button. Once a user clicks on this button, it will take the user to the purchase page"
+    }
+]
