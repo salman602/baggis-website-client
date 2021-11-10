@@ -11,6 +11,8 @@ import Navigation from './pages/Shared/Navigation/Navigation';
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
+import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+import Footer from './pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -22,16 +24,20 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
             <Route path="/signup">
               <Register />
             </Route>
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/product/:productId">
+            <PrivateRoute path="/product/:productId">
               <Purchase></Purchase>
-            </Route>
+            </PrivateRoute>
           </Switch>
+          <Footer />
         </Router>
       </AuthProvider>
     </div>

@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import googleIcon from '../../../assets/icons/google.png';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { loginUser } = useAuth();
+    const { loginUser, signInUsingGoogle } = useAuth();
+
+    const history = useHistory();
+    const location = useLocation();
 
 
     const handleInputChange = (e) => {
@@ -19,8 +23,13 @@ const Login = () => {
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-        loginUser(loginData.email, loginData.password)
+        loginUser(loginData.email, loginData.password, location, history);
+    };
+
+    const handleGoogleSignIn = () => {
+        signInUsingGoogle(location, history);
     }
+
     return (
         <div className="my-5">
             <Container>
@@ -50,6 +59,10 @@ const Login = () => {
                         Login
                     </Button>
                 </Form>
+                <div className="my-4">
+                    <p>Or login using: </p>
+                    <Button onClick={handleGoogleSignIn} variant="link"><img src={googleIcon} alt="" width="50" height="50" /></Button>
+                </div>
                 <p>New user? Please Register
                     <NavLink className="text-decoration-none" to="/signup"> here</NavLink>
                 </p>

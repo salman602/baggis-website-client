@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Button, Container, Form, Row, Col } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import googleIcon from '../../../assets/icons/google.png';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
-    const { registerUser } = useAuth();
+    const { registerUser, signInUsingGoogle } = useAuth();
+
+    const history = useHistory();
+    const location = useLocation();
 
     const handleInputChange = (e) => {
         const field = e.target.name;
@@ -20,7 +24,11 @@ const Register = () => {
         e.preventDefault();
         const fullName = `${loginData?.firstName} ${loginData?.lastName}`;
         console.log(fullName)
-        registerUser(loginData?.email, loginData?.password, fullName);
+        registerUser(loginData?.email, loginData?.password, fullName, history);
+    };
+
+    const handleGoogleSignIn = () => {
+        signInUsingGoogle(location, history);
     }
     return (
         <div className="my-5">
@@ -71,6 +79,12 @@ const Register = () => {
                         Register
                     </Button>
                 </Form>
+
+                <div className="my-4">
+                    <p>Or login using: </p>
+                    <Button onClick={handleGoogleSignIn} variant="link"><img src={googleIcon} alt="" width="50" height="50" /></Button>
+                </div>
+
                 <p>Already Registered? Please Login
                     <NavLink className="text-decoration-none" to="/login"> here</NavLink>
                 </p>
