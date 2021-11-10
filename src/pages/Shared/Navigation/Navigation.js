@@ -1,5 +1,8 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+// import { HashLink } from 'react-router-hash-link';
+import './Navigation.css';
 
 const Navigation = () => {
     return (
@@ -9,8 +12,10 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#products">Products</Nav.Link>
+                        <NavLink className="menu-item" to="/home">Home</NavLink>
+                        <NavLink className="menu-item" to="/about">About</NavLink>
+                        <NavLink className="menu-item" to="/products">Products</NavLink>
+                        <NavLink className="menu-item" to="/explore">Explore</NavLink>
 
                     </Nav>
                     <Nav>
