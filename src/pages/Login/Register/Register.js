@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Container, Form } from 'react-bootstrap';
+import { Button, Container, Form, Row, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
-const Login = () => {
+const Register = () => {
     const [loginData, setLoginData] = useState({});
-    const { loginUser } = useAuth();
-
+    const { registerUser } = useAuth();
 
     const handleInputChange = (e) => {
         const field = e.target.name;
@@ -17,16 +16,38 @@ const Login = () => {
         console.log(field, value);
     }
 
-    const handleLoginSubmit = (e) => {
+    const handleRegisterSubmit = (e) => {
         e.preventDefault();
-        loginUser(loginData.email, loginData.password)
+        const fullName = `${loginData?.firstName} ${loginData?.lastName}`;
+        console.log(fullName)
+        registerUser(loginData?.email, loginData?.password, fullName);
     }
     return (
         <div className="my-5">
             <Container>
                 <Form
-                    onSubmit={handleLoginSubmit}
+                    onSubmit={handleRegisterSubmit}
                     className="w-25 mx-auto my-4">
+                    <Row>
+                        <Col>
+                            <Form.Control
+                                onBlur={handleInputChange}
+                                type="text"
+                                name="firstName"
+                                className="mb-3"
+                                placeholder="First name" />
+
+                        </Col>
+                        <Col>
+
+                            <Form.Control
+                                onBlur={handleInputChange}
+                                type="text"
+                                name="lastName"
+                                className="mb-3"
+                                placeholder="last name" />
+                        </Col>
+                    </Row>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
 
                         <Form.Control
@@ -47,15 +68,15 @@ const Login = () => {
                     </Form.Group>
 
                     <Button variant="primary" type="submit">
-                        Login
+                        Register
                     </Button>
                 </Form>
-                <p>New user? Please Register
-                    <NavLink className="text-decoration-none" to="/signup"> here</NavLink>
+                <p>Already Registered? Please Login
+                    <NavLink className="text-decoration-none" to="/login"> here</NavLink>
                 </p>
             </Container>
         </div>
     );
 };
 
-export default Login;
+export default Register;
