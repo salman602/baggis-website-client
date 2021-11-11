@@ -1,9 +1,15 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhoneAlt, faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons'
-import './Footer.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhoneAlt, faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../../assets/logo.png';
+import './Footer.css';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fab)
 
 const Footer = () => {
     const phoneIcon = <FontAwesomeIcon icon={faPhoneAlt} />
@@ -15,87 +21,107 @@ const Footer = () => {
                 <Row className="text-white py-4">
 
                     <Col xs={6} md={3}>
-                        <h5 className="mb-3">About MediCare</h5>
-                        <p className="text-white-50">MediCare has all the characteristics of a world-class hospital with wide range of services and specialists, equipments , technology and service quality.</p>
+                        <h5 className="mb-4">CONTACT INFO</h5>
+                        <img src={logo} alt="" />
+                        <p className="text-white-50 mt-3"><strong>Address:</strong>  Jl. Piit No.1 Sadang Serang, Kec. Coblong, Kota Bandung.</p>
+                        <p className="text-white-50"><strong>Phone:</strong><span className="custom-color"> 022-2503530</span></p>
+                        <div className="mb-3">
+                            <FontAwesomeIcon href="https:facebook.com/baggies" className="mx-2 icon" icon={['fab', 'facebook']} />
+                            <FontAwesomeIcon href="https:twitter.com/baggies" className="mx-2 icon" icon={['fab', 'twitter']} />
+                            <FontAwesomeIcon href="https:pinterest.com/baggies" className="mx-2 icon" icon={['fab', 'pinterest']} />
+                            <FontAwesomeIcon href="https:youtube.com/baggies" className="mx-2 icon" icon={['fab', 'youtube']} />
+                            <FontAwesomeIcon href="https:instagram.com/baggies" className="mx-2 icon" icon={['fab', 'instagram']} />
+                        </div>
+
                     </Col>
                     <Col xs={6} md={3}>
-                        <h5 className="mb-3">Departments</h5>
+                        <h5 className="mb-4">NAVIGATE</h5>
 
                         <p className="mb-1">
-                            <NavLink to="/orthopedics"
+                            <NavLink to="/contactus"
                                 className="ps-0 pt-0 text-decoration-none text-white-50">
-                                <span>Orthopedics</span>
+                                <span>Contact Us</span>
                             </NavLink>
                         </p>
                         <p className="mb-1">
-                            <NavLink to="/neurology"
+                            <NavLink to="/blog"
                                 className="ps-0 pt-0 text-white-50 text-decoration-none">
-                                <span>Neurology</span>
+                                <span>Blog</span>
                             </NavLink>
                         </p>
                         <p className="mb-1">
-                            <NavLink to="/dental"
+                            <NavLink to="/returns"
                                 className="ps-0 pt-0 text-white-50 text-decoration-none">
-                                <span>Dental Care</span>
+                                <span>Shipping & Returns</span>
                             </NavLink>
                         </p>
                         <p className="mb-1">
-                            <NavLink to="/urology"
+                            <NavLink to="/rss"
                                 className="ps-0 pt-0 text-white-50 text-decoration-none">
-                                <span>Urology</span>
+                                <span>RSS Syndication</span>
                             </NavLink>
                         </p>
                         <p className="mb-1">
-                            <NavLink to="/medicine"
+                            <NavLink to="/Policy"
                                 className="ps-0 pt-0 text-white-50 text-decoration-none">
-                                <span>Medicine</span>
+                                <span>Policy</span>
                             </NavLink>
                         </p>
-                        <p className="mb-1">
-                            <NavLink to="/xray"
-                                className="ps-0 pt-0 text-white-50 text-decoration-none">
-                                <span>Xray & CT Scan</span>
-                            </NavLink>
-                        </p>
+
                     </Col>
 
                     <Col xs={6} md={3}>
-                        <h5 className="mb-3">Latest News & Tips</h5>
-                        <div className="news-item text-white-50">
-                            <h6>Cancer Treatment is Available Now</h6>
-                            <p>04th October, 2020</p>
-                        </div>
-                        <hr />
-                        <div className="news-item text-white-50">
-                            <h6>Disease Based on Junk Foods</h6>
-                            <p>18th January, 2021</p>
-                        </div>
-                        <hr />
-                        <div className="news-item text-white-50">
-                            <h6>Hospitality Managements</h6>
-                            <p>26th May, 2021</p>
-                        </div>
-                        <hr />
+                        <h5 className="mb-4">POPULAR BRANDS</h5>
+                        <p className="mb-1">
+                            <NavLink to="/commongoods"
+                                className="ps-0 pt-0 text-white-50 text-decoration-none">
+                                <span>Common Goods</span>
+                            </NavLink>
+                        </p>
+                        <p className="mb-1">
+                            <NavLink to="/ofs"
+                                className="ps-0 pt-0 text-white-50 text-decoration-none">
+                                <span>OFS</span>
+                            </NavLink>
+                        </p>
+                        <p className="mb-1">
+                            <NavLink to="/sagaform"
+                                className="ps-0 pt-0 text-white-50 text-decoration-none">
+                                <span>Sagaform</span>
+                            </NavLink>
+                        </p>
+                        <p className="mb-1">
+                            <NavLink to="/Cat"
+                                className="ps-0 pt-0 text-white-50 text-decoration-none">
+                                <span>Cat</span>
+                            </NavLink>
+                        </p>
+                        <p className="mb-1">
+                            <NavLink to="/nuoxiya"
+                                className="ps-0 pt-0 text-white-50 text-decoration-none">
+                                <span>Nuoxiya</span>
+                            </NavLink>
+                        </p>
                     </Col>
                     <Col xs={6} md={3}>
-                        <h5 className="mb-3">Contact Details</h5>
-                        <div className="text-white-50">
-                            <h6 className="">House# 16, Road# 16 Old 27/ Genetic Palaza Dhanmondi, Dhaka, 1209</h6>
-                            <p className="text-info">{phoneIcon}
-                                <span className="text-white-50"> tell: 123-456-789</span>
-                            </p>
-                            <p className="text-info">{emailIcon}
-                                <span className="text-white-50"> Email: info@medicare.com</span>
-                            </p>
-                            <p className="text-info">{webIcon}
-                                <span className="text-white-50"> Website: https://www.medicare.com</span>
-                            </p>
-                        </div>
+                        <h5 className="mb-4">SUBSCRIBE TO OUR NEWSLETTER</h5>
+                        <p className="ps-0 pt-0 text-white-50 mb-3">Get the latest updates on new products and upcoming sales</p>
+                        <Form>
+                            <Row>
+                                <Col xs={12} md={8}>
+                                    <Form.Control placeholder="Your Email Address" />
+                                </Col>
+                                <Col xs={12} md={4}>
+                                    <Button className="button">Subscribe</Button>
+                                </Col>
+                            </Row>
+                        </Form>
                     </Col>
                 </Row>
             </Container>
             <hr className="text-white-50" />
-            <p className="text-center text-white pb-3">&copy; All rights Reserved By Medicare Ltd.</p>
+            <p className="text-center text-white">Powered By <span className="custom-color">NicheCommerce</span></p>
+            <p className="text-center text-white pb-3">&copy; Reserved By BAGGIES Ltd.</p>
         </div>
     );
 };
