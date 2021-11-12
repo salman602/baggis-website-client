@@ -18,6 +18,7 @@ const Navigation = () => {
                         <NavLink className="menu-item" to="/about">About</NavLink>
                         <NavLink className="menu-item" to="/products">Products</NavLink>
                         <NavLink className="menu-item" to="/explore">Explore</NavLink>
+                        <NavLink className="menu-item" to="/dashboard">Dashboard</NavLink>
 
                     </Nav>
                     <Nav>
