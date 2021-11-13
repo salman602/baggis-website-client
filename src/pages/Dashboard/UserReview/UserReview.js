@@ -8,7 +8,7 @@ const UserReview = () => {
     const { user } = useAuth();
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://pacific-coast-57410.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

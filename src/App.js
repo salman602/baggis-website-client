@@ -7,12 +7,12 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home/Home/Home';
 import Purchase from './pages/Purchase/Purchase';
-import Navigation from './pages/Shared/Navigation/Navigation';
+
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
-import Footer from './pages/Shared/Footer/Footer';
+
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Explore from './pages/Explore/Explore/Explore';
 
@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
-          <Navigation />
+
           <Switch>
             <Route exact path="/">
               <Home />
@@ -45,7 +45,7 @@ function App() {
               <Explore />
             </Route>
           </Switch>
-          <Footer />
+
         </Router>
       </AuthProvider>
     </div>

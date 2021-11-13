@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import useProducts from '../../hooks/useProducts';
 import useAuth from '../../hooks/useAuth';
+import Navigation from '../Shared/Navigation/Navigation';
+import Footer from '../Shared/Footer/Footer';
 
 const Purchase = () => {
     const { user } = useAuth();
@@ -25,7 +27,7 @@ const Purchase = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/orders', {
+        fetch('https://pacific-coast-57410.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -45,6 +47,7 @@ const Purchase = () => {
 
     return (
         <div>
+            <Navigation />
             <Container>
                 <Row>
                     <Col xs={12} sm={6} md={4} style={singleProductStyle}>
@@ -74,6 +77,7 @@ const Purchase = () => {
                     </Col>
                 </Row>
             </Container>
+            <Footer />
         </div>
     );
 };

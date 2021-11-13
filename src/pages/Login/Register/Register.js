@@ -3,6 +3,8 @@ import { Button, Container, Form, Row, Col } from 'react-bootstrap';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import googleIcon from '../../../assets/icons/google.png';
+import Navigation from '../../Shared/Navigation/Navigation';
+import Footer from '../../Shared/Footer/Footer';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
@@ -31,8 +33,10 @@ const Register = () => {
         signInUsingGoogle(location, history);
     }
     return (
-        <div className="my-5">
-            <Container>
+        <div>
+            <Navigation />
+
+            <Container className="my-5">
                 <Form
                     onSubmit={handleRegisterSubmit}
                     className="w-25 mx-auto my-4">
@@ -89,6 +93,8 @@ const Register = () => {
                     <NavLink className="text-decoration-none" to="/login"> here</NavLink>
                 </p>
             </Container>
+
+            <Footer />
         </div>
     );
 };
