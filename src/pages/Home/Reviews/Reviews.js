@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import Rating from 'react-rating';
 
+
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
@@ -11,6 +12,7 @@ const Reviews = () => {
     }, [])
     return (
         <div className="py-sm-3 py-md-4 py-lg-5">
+            <h2 className="mb-4">Our customer's <span className="custom-color">Feedback</span></h2>
             <Container>
                 <Row xs={2} sm={3} md={4} className="g-4">
                     {
@@ -18,7 +20,7 @@ const Reviews = () => {
                             <Col
                                 key={review._id}
                             >
-                                <Card className="h-100">
+                                <Card className="h-100 border-0 shadow">
                                     <Card.Body>
                                         <Card.Title>{review?.name}</Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">{review?.email}</Card.Subtitle>

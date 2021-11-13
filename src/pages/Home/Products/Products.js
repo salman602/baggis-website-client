@@ -7,11 +7,12 @@ const Products = () => {
     const [products] = useProducts();
     return (
         <div>
-            <Container>
+            <Container className="py-5">
+                <h2 className="my-4">New <span className="custom-color">Arrival</span></h2>
                 <Row xs={1} sm={2} md={3} className="g-4">
                     {
                         products.slice(0, 6).map(product => <Product
-                            key={product.key}
+                            key={product._id}
                             product={product}
                         ></Product>)
                     }

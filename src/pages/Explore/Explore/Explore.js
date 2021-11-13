@@ -5,7 +5,6 @@ import Product from '../../Home/Product/Product';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 
-
 const Explore = () => {
     const [products] = useProducts();
     return (

@@ -26,8 +26,6 @@ const Navigation = () => {
                             <Button className="btn btn-dark rounded-pill">Sign up</Button>
                         </NavLink>
 
-
-
                         {!user?.email ? <NavLink to="/login">
                             <Button className="btn btn-danger rounded-pill">login</Button>
                         </NavLink> : <Button onClick={logOut} className="btn btn-danger rounded-pill">logout</Button>}

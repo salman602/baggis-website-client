@@ -15,7 +15,7 @@ const Purchase = () => {
     const [singleProduct, setSingleProduct] = useState({});
 
     useEffect(() => {
-        const filteredProduct = products.filter(product => product?.key === Number(productId));
+        const filteredProduct = products.filter(product => product?._id === productId);
         setSingleProduct(filteredProduct[0]);
     }, [products, productId]);
 

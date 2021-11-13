@@ -17,7 +17,7 @@ const Banner = () => {
                             <div>
                                 <h2>STYLISH BACKPACK</h2>
                                 <h5 className="my-3">Browse your backpack now.</h5>
-                                <Button>Browse Now</Button>
+                                <Button className="button">Browse Now</Button>
                             </div>
                         </Col>
                         <Col xs={12} md={6}>
@@ -37,7 +37,7 @@ const Banner = () => {
                             <div>
                                 <h2>STYLISH BACKPACK</h2>
                                 <h5 className="my-3">Browse your backpack now.</h5>
-                                <Button>Browse Now</Button>
+                                <Button className="button">Browse Now</Button>
                             </div>
                         </Col>
 
@@ -55,7 +55,7 @@ const Banner = () => {
                             <div>
                                 <h2>STYLISH BACKPACK</h2>
                                 <h5 className="my-3">Browse your backpack now.</h5>
-                                <Button>Browse Now</Button>
+                                <Button className="button">Browse Now</Button>
                             </div>
                         </Col>
                     </Row>
