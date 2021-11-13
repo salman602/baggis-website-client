@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Row, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import './MyOrders.css'
 import useAuth from '../../../hooks/useAuth';
 

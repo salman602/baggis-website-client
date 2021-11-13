@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -19,6 +20,9 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 const user = result.user;
+                // save user to the database with google
+                saveUser(user.email, user.displayName, 'PUT');
+
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
             })
@@ -38,7 +42,7 @@ const useFirebase = () => {
                 // console.log(user)
                 // console.log(newUser)
                 // save user to the database with email and password
-                // saveUser(email, name, 'POST');
+                saveUser(email, name, 'POST');
 
                 //send name to firebase after creating an user
                 updateProfile(auth.currentUser, {
@@ -84,6 +88,25 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth]);
 
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
+
+    // function for save user information to the database
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
+
     // logout 
     const logOut = () => {
         signOut(auth).then(() => {
@@ -96,6 +119,7 @@ const useFirebase = () => {
 
     return {
         user,
+        admin,
         error,
         isLoading,
         signInUsingGoogle,

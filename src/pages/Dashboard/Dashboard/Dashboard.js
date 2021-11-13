@@ -25,13 +25,17 @@ import { ListItemButton } from '@mui/material';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faColumns, faList, faGrinStars } from '@fortawesome/free-solid-svg-icons';
+import { faColumns, faList, faGrinStars, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MyOrders from '../MyOrders/MyOrders';
 import UserReview from '../UserReview/UserReview';
 import Pay from '../Pay/Pay';
+import useAuth from '../../../hooks/useAuth';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import AddProduct from '../AddProduct/AddProduct';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 
 
@@ -39,6 +43,7 @@ import Pay from '../Pay/Pay';
 const drawerWidth = 250;
 
 function Dashboard(props) {
+    const { logOut, admin } = useAuth();
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -53,45 +58,91 @@ function Dashboard(props) {
         <div style={{ backgroundImage: 'linear-gradient(to bottom, aquamarine , rgb(91,146,229))', color: 'white', height: '100%' }}>
 
             <Toolbar />
+            {
+                !admin && <div>
+                    <NavLink to="/home" style={{ textDecoration: 'none', color: 'white' }}>
+                        <ListItem>
+                            <ListItemButton>
+                                <ListItemText primary="Products" />
+                            </ListItemButton>
+                        </ListItem>
+                    </NavLink>
+
+                    <NavLink to={`${url}`} style={{ textDecoration: 'none', color: 'white' }}>
+                        <ListItem button>
+                            <ListItemIcon>
+                                <FontAwesomeIcon icon={faColumns} />
+                            </ListItemIcon>
+                            <ListItemText primary='Dashboard' />
+                        </ListItem>
+                    </NavLink>
+                    <NavLink to={`${url}/myorders`} style={{ textDecoration: 'none', color: 'white' }}>
+                        <ListItem button>
+                            <ListItemIcon>
+                                <FontAwesomeIcon icon={faList} />
+                            </ListItemIcon>
+                            <ListItemText primary='My Orders' />
+                        </ListItem>
+                    </NavLink>
+                    <NavLink to={`${url}/review`} style={{ textDecoration: 'none', color: 'white' }}>
+                        <ListItem button>
+                            <ListItemIcon>
+                                <FontAwesomeIcon icon={faGrinStars} />
+                            </ListItemIcon>
+                            <ListItemText primary='Review' />
+                        </ListItem>
+                    </NavLink>
+                    <NavLink to={`${url}/pay`} style={{ textDecoration: 'none', color: 'white' }}>
+                        <ListItem button>
+                            <ListItemIcon>
+                                <FontAwesomeIcon icon={['fab', 'amazon-pay']} />
+                            </ListItemIcon>
+                            <ListItemText primary='Pay' />
+                        </ListItem>
+                    </NavLink>
+                </div>
+            }
+
+
+
+
+            {/* for admin */}
+
+            {
+                admin && <div>
+                    <NavLink to={`${url}/manageorders`} style={{ textDecoration: 'none', color: 'white' }}>
+                        <ListItem button>
+                            <ListItemIcon>
+                                <FontAwesomeIcon icon={faList} />
+                            </ListItemIcon>
+                            <ListItemText primary='Manage All Orders' />
+                        </ListItem>
+                    </NavLink>
+                    <NavLink to={`${url}/addproduct`} style={{ textDecoration: 'none', color: 'white' }}>
+                        <ListItem button>
+                            <ListItemIcon>
+                                <FontAwesomeIcon icon={faList} />
+                            </ListItemIcon>
+                            <ListItemText primary='Add Product' />
+                        </ListItem>
+                    </NavLink>
+                    <NavLink to={`${url}/makeadmin`} style={{ textDecoration: 'none', color: 'white' }}>
+                        <ListItem button>
+                            <ListItemIcon>
+                                <FontAwesomeIcon icon={faList} />
+                            </ListItemIcon>
+                            <ListItemText primary='Make Admin' />
+                        </ListItem>
+                    </NavLink>
+                </div>
+            }
 
             <NavLink to="/home" style={{ textDecoration: 'none', color: 'white' }}>
-                <ListItem>
-                    <ListItemButton>
-                        <ListItemText primary="Products" />
-                    </ListItemButton>
-                </ListItem>
-            </NavLink>
-
-            <NavLink to={`${url}`} style={{ textDecoration: 'none', color: 'white' }}>
                 <ListItem button>
                     <ListItemIcon>
-                        <FontAwesomeIcon icon={faColumns} />
+                        <FontAwesomeIcon icon={faSignOutAlt} />
                     </ListItemIcon>
-                    <ListItemText primary='Dashboard' />
-                </ListItem>
-            </NavLink>
-            <NavLink to={`${url}/myorders`} style={{ textDecoration: 'none', color: 'white' }}>
-                <ListItem button>
-                    <ListItemIcon>
-                        <FontAwesomeIcon icon={faList} />
-                    </ListItemIcon>
-                    <ListItemText primary='My Orders' />
-                </ListItem>
-            </NavLink>
-            <NavLink to={`${url}/review`} style={{ textDecoration: 'none', color: 'white' }}>
-                <ListItem button>
-                    <ListItemIcon>
-                        <FontAwesomeIcon icon={faGrinStars} />
-                    </ListItemIcon>
-                    <ListItemText primary='Review' />
-                </ListItem>
-            </NavLink>
-            <NavLink to={`${url}/pay`} style={{ textDecoration: 'none', color: 'white' }}>
-                <ListItem button>
-                    <ListItemIcon>
-                        <FontAwesomeIcon icon={['fab', 'amazon-pay']} />
-                    </ListItemIcon>
-                    <ListItemText primary='Pay' />
+                    <ListItemText primary='Logout' onClick={logOut} />
                 </ListItem>
             </NavLink>
 
@@ -184,6 +235,15 @@ function Dashboard(props) {
                     </Route>
                     <Route path={`${path}/pay`}>
                         <Pay />
+                    </Route>
+                    <Route path={`${path}/manageorders`}>
+                        <ManageAllOrders />
+                    </Route>
+                    <Route path={`${path}/addproduct`}>
+                        <AddProduct />
+                    </Route>
+                    <Route path={`${path}/makeadmin`}>
+                        <MakeAdmin />
                     </Route>
 
 
