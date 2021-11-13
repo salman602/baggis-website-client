@@ -14,6 +14,7 @@ import AuthProvider from './Context/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Footer from './pages/Shared/Footer/Footer';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import Explore from './pages/Explore/Explore/Explore';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
             <PrivateRoute path="/product/:productId">
               <Purchase></Purchase>
             </PrivateRoute>
+            <Route path="/explore">
+              <Explore />
+            </Route>
           </Switch>
           <Footer />
         </Router>

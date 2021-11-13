@@ -5,14 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import './MyOrders.css'
 import useAuth from '../../../hooks/useAuth';
+// import useOrders from '../../../hooks/useOrders';
 
 
 const MyOrders = () => {
     const trashBox = <FontAwesomeIcon icon={faTrashAlt} />;
     const { user } = useAuth();
     const [myOrders, setMyOrders] = useState([]);
+    // const [orders] = useOrders();
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`;
+        const url = `http://localhost:5000/orders/${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

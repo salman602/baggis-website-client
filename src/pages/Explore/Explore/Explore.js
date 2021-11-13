@@ -1,16 +1,17 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import useProducts from '../../../hooks/useProducts';
-import Product from '../Product/Product';
+import Product from '../../Home/Product/Product';
 
-const Products = () => {
+
+const Explore = () => {
     const [products] = useProducts();
     return (
         <div>
             <Container>
                 <Row xs={1} sm={2} md={3} className="g-4">
                     {
-                        products.slice(0, 6).map(product => <Product
+                        products.map(product => <Product
                             key={product.key}
                             product={product}
                         ></Product>)
@@ -21,4 +22,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Explore;

@@ -39,7 +39,7 @@ const useFirebase = () => {
                 const user = result.user;
                 const newUser = { email, displayName: name };
                 setUser(newUser);
-                // console.log(user)
+                console.log(user)
                 // console.log(newUser)
                 // save user to the database with email and password
                 saveUser(email, name, 'POST');
