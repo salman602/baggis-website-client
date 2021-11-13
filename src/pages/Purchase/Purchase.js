@@ -66,8 +66,9 @@ const Purchase = () => {
                             <input {...register("email")} defaultValue={user?.email} readOnly />
                             <input {...register("address")} placeholder="Your address" />
                             <input {...register("phone")} placeholder="Phone Number" />
+                            {singleProduct?.name && <input {...register("productName")} defaultValue={singleProduct?.name} readOnly />}
                             {singleProduct?.price && <input {...register("unitprice")} defaultValue={singleProduct?.price} readOnly />}
-                            <input type="number" {...register("quantity", { min: 1, max: 99 })} placeholder="Quantity" />
+                            <input type="number" {...register("quantity", { min: 1, max: 99 })} defaultValue='1' placeholder="Quantity" />
                             <input type="submit" />
                         </form>
                     </Col>
