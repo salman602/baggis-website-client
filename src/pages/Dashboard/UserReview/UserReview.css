@@ -1,0 +1,11 @@
+.user-review input{
+    width: 40%;
+    margin: 1rem auto;
+    padding: 10px;
+}
+
+.user-review textarea{
+    width: 40%;
+    margin: 1rem auto;
+    padding: 10px;
+}

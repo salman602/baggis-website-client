@@ -2,6 +2,7 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
+import './UserReview.css';
 
 
 const UserReview = () => {
@@ -25,18 +26,18 @@ const UserReview = () => {
 
     };
     return (
-        <div>
-            <h3>this is review page.</h3>
+        <div className="user-review">
+            <h2 className="mb-4 custom-color">Please Rate us</h2>
             <Form onSubmit={handleSubmit(onSubmit)}>
                 {
                     user?.email && <div>
-                        <input {...register("name")} defaultValue={user?.displayName} readOnly />
-                        <input {...register("email")} defaultValue={user?.email} readOnly />
+                        <input {...register("name")} defaultValue={user?.displayName} readOnly /> <br />
+                        <input {...register("email")} defaultValue={user?.email} readOnly /> <br />
                     </div>
                 }
-                <input type="number" {...register("rating", { min: 1, max: 5 })} placeholder="Rating out of 5" />
-                <Form.Control {...register("review")} as="textarea" rows={3} placeholder="Please write your feedback here." />
-                <input type="submit" />
+                <input type="number" {...register("rating", { min: 1, max: 5 })} placeholder="Rating out of 5" /> <br />
+                <Form.Control {...register("review")} as="textarea" rows={3} placeholder="Please write your feedback here." /> <br />
+                <input type="submit" value="Rate" />
             </Form>
         </div>
     );

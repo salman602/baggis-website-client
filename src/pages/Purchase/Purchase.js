@@ -6,6 +6,7 @@ import useProducts from '../../hooks/useProducts';
 import useAuth from '../../hooks/useAuth';
 import Navigation from '../Shared/Navigation/Navigation';
 import Footer from '../Shared/Footer/Footer';
+import './Purchase.css';
 
 const Purchase = () => {
     const { user } = useAuth();
@@ -48,7 +49,7 @@ const Purchase = () => {
     return (
         <div>
             <Navigation />
-            <Container>
+            <Container className="py-5">
                 <Row>
                     <Col xs={12} sm={6} md={4} style={singleProductStyle}>
                         <img className="mw-100" src={singleProduct?.img} alt="" />
@@ -63,7 +64,7 @@ const Purchase = () => {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col xs={12} sm={12} md={4}>
+                    <Col xs={12} sm={12} md={4} className="purchase-form">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input {...register("name")} defaultValue={user?.displayName} readOnly />
                             <input {...register("email")} defaultValue={user?.email} readOnly />
@@ -73,7 +74,7 @@ const Purchase = () => {
                             {singleProduct?.name && <input {...register("productName")} defaultValue={singleProduct?.name} readOnly />}
                             {singleProduct?.price && <input {...register("unitprice")} defaultValue={singleProduct?.price} readOnly />}
                             <input type="number" {...register("quantity", { min: 1, max: 99 })} defaultValue='1' placeholder="Quantity" />
-                            <input type="submit" />
+                            <input type="submit" value="Proceed to Order" />
                         </form>
                     </Col>
                 </Row>

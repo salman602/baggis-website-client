@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-// import { HashLink } from 'react-router-hash-link';
+import logo from '../../../assets/logo.png';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -10,15 +10,19 @@ const Navigation = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
             <Container>
-                <Navbar.Brand href="#home">BAGGIES</Navbar.Brand>
+                <Navbar.Brand href="/home">
+                    <img src={logo} alt="" />
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <NavLink className="menu-item" to="/home">Home</NavLink>
                         <NavLink className="menu-item" to="/about">About</NavLink>
-                        <NavLink className="menu-item" to="/products">Products</NavLink>
+
                         <NavLink className="menu-item" to="/explore">Explore</NavLink>
-                        <NavLink className="menu-item" to="/dashboard">Dashboard</NavLink>
+                        {
+                            user?.email && <NavLink className="menu-item" to="/dashboard">Dashboard</NavLink>
+                        }
 
                     </Nav>
                     <Nav>

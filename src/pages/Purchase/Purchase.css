@@ -1,0 +1,8 @@
+.purchase-form form input{
+    width: 95%;
+    margin: 0.5rem auto;
+    padding: .025rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

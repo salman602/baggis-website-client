@@ -25,7 +25,7 @@ import { ListItemButton } from '@mui/material';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faColumns, faList, faGrinStars, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faColumns, faList, faGrinStars, faSignOutAlt, faPlusCircle, faUserCog } from '@fortawesome/free-solid-svg-icons';
 
 
 import DashboardHome from '../DashboardHome/DashboardHome';
@@ -61,7 +61,7 @@ function Dashboard(props) {
             <Toolbar />
             {
                 !admin && <div>
-                    <NavLink to="/home" style={{ textDecoration: 'none', color: 'white' }}>
+                    <NavLink to="/explore" style={{ textDecoration: 'none', color: 'white' }}>
                         <ListItem>
                             <ListItemButton>
                                 <ListItemText primary="Products" />
@@ -122,7 +122,7 @@ function Dashboard(props) {
                     <NavLink to={`${url}/addproduct`} style={{ textDecoration: 'none', color: 'white' }}>
                         <ListItem button>
                             <ListItemIcon>
-                                <FontAwesomeIcon icon={faList} />
+                                <FontAwesomeIcon icon={faPlusCircle} />
                             </ListItemIcon>
                             <ListItemText primary='Add Product' />
                         </ListItem>
@@ -130,7 +130,7 @@ function Dashboard(props) {
                     <NavLink to={`${url}/makeadmin`} style={{ textDecoration: 'none', color: 'white' }}>
                         <ListItem button>
                             <ListItemIcon>
-                                <FontAwesomeIcon icon={faList} />
+                                <FontAwesomeIcon icon={faUserCog} />
                             </ListItemIcon>
                             <ListItemText primary='Make Admin' />
                         </ListItem>

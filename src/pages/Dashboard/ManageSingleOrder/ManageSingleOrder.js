@@ -6,7 +6,7 @@ const ManageSingleOrder = (props) => {
     const handleStatusChange = id => {
         const orderItem = { ...order }
         console.log(id);
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://pacific-coast-57410.herokuapp.com/orders/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'

@@ -43,6 +43,7 @@ const MyOrders = () => {
 
     return (
         <div>
+            <h2 className="mb-4 custom-color">My Orders</h2>
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>

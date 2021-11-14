@@ -1,5 +1,4 @@
 import React from 'react';
-import { InputGroup } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import './AddProduct.css'
 
@@ -26,6 +25,7 @@ const AddProduct = () => {
 
     return (
         <div className="add-product">
+            <h2 className="mb-4 custom-color">Add your product</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("key")} placeholder="Key" /> <br />
                 <input {...register("name")} placeholder="Product Name" /> <br />
