@@ -32,7 +32,6 @@ const Reviews = () => {
                                             readonly
                                             style={{ color: 'orange', letterSpacing: '0.3rem' }}
                                         />
-                                        <Card.Text>{review?.rating}</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </Col>

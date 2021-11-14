@@ -36,6 +36,7 @@ import useAuth from '../../../hooks/useAuth';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 
 
@@ -236,15 +237,16 @@ function Dashboard(props) {
                     <Route path={`${path}/pay`}>
                         <Pay />
                     </Route>
-                    <Route path={`${path}/manageorders`}>
+
+                    <AdminRoute path={`${path}/manageorders`}>
                         <ManageAllOrders />
-                    </Route>
-                    <Route path={`${path}/addproduct`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addproduct`}>
                         <AddProduct />
-                    </Route>
-                    <Route path={`${path}/makeadmin`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeadmin`}>
                         <MakeAdmin />
-                    </Route>
+                    </AdminRoute>
 
 
                 </Switch>

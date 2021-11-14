@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
+import ManageSingleOrder from '../ManageSingleOrder/ManageSingleOrder';
 
 const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
@@ -8,6 +9,7 @@ const ManageAllOrders = () => {
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, []);
+
 
     return (
         <div>
@@ -25,20 +27,13 @@ const ManageAllOrders = () => {
                 </thead>
                 <tbody>
                     {
-                        allOrders.map(order => <tr
+                        allOrders.map(order => <ManageSingleOrder
                             key={order._id}
+                            order={order}
+                            setAllOrders={setAllOrders}
                         >
-                            <td>{order.name}</td>
-                            <td>{order.email}</td>
-                            <td>{order.productName}</td>
-                            <td>{order.quantity}</td>
-                            <td>{order.address}</td>
-                            <td>{order.phone}</td>
-                            <td className="text-center">
-                                Pending
-                            </td>
 
-                        </tr>)
+                        </ManageSingleOrder>)
                     }
 
                 </tbody>

@@ -26,7 +26,7 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <h3>This is make admin page only for admin</h3>
+            <h3 className="mb-3">Provide an user email to make admin</h3>
             <Form onSubmit={handleMakeAdmin} className="w-50 mx-auto">
                 <InputGroup className="mb-3">
                     <FormControl

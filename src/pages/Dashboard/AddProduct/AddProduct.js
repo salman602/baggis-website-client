@@ -1,6 +1,7 @@
 import React from 'react';
 import { InputGroup } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import './AddProduct.css'
 
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -24,14 +25,14 @@ const AddProduct = () => {
     };
 
     return (
-        <div>
+        <div className="add-product">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("key")} placeholder="Key" />
-                <input {...register("name")} placeholder="Product Name" />
-                <input {...register("description")} placeholder="Description about product" />
-                <input type="number" {...register("price")} placeholder="Price" />
-                <input {...register("img")} placeholder="Image URL" />
-                <input type="submit" />
+                <input {...register("key")} placeholder="Key" /> <br />
+                <input {...register("name")} placeholder="Product Name" /> <br />
+                <input {...register("description")} placeholder="Description about product" /> <br />
+                <input type="number" {...register("price")} placeholder="Price" /> <br />
+                <input {...register("img")} placeholder="Image URL" /> <br />
+                <input type="submit" value="Add Product" />
             </form>
         </div>
     );
