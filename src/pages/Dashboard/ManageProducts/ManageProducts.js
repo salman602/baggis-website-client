@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Container, Row, Card, Col } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
+
+const trashBox = <FontAwesomeIcon icon={faTrashAlt} />;
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
@@ -20,12 +25,13 @@ const ManageProducts = () => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         alert('Product is deleted successfully');
-                        const remainingProducts = products.filter(order => order._id !== id);
+                        const remainingProducts = products.filter(product => product._id !== id);
                         setProducts(remainingProducts);
                     }
                 })
         }
-    }
+    };
+
     return (
         <div>
             <h2>Manage your products</h2>
@@ -40,7 +46,7 @@ const ManageProducts = () => {
                                     <Card.Body>
                                         <Card.Title>{singleProduct?.name}</Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">Price: ${singleProduct?.price}</Card.Subtitle>
-                                        <Button onClick={() => handleDeleteProduct(singleProduct?._id)} size="sm" variant="warning">Delete product</Button>
+                                        <Button onClick={() => handleDeleteProduct(singleProduct?._id)} size="sm" variant="warning">Delete product {trashBox}</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>

@@ -22,7 +22,7 @@ import { NavLink } from 'react-router-dom';
 import { ListItemButton } from '@mui/material';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faColumns, faList, faGrinStars, faSignOutAlt, faPlusCircle, faUserCog } from '@fortawesome/free-solid-svg-icons';
+import { faColumns, faList, faGrinStars, faSignOutAlt, faPlusCircle, faUserCog, faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MyOrders from '../MyOrders/MyOrders';
@@ -130,7 +130,7 @@ function Dashboard(props) {
                     <NavLink to={`${url}/manageproducts`} style={{ textDecoration: 'none', color: 'white' }}>
                         <ListItem button>
                             <ListItemIcon>
-                                <FontAwesomeIcon icon={faUserCog} />
+                                <FontAwesomeIcon icon={faCartArrowDown} />
                             </ListItemIcon>
                             <ListItemText primary='Manage Products' />
                         </ListItem>
