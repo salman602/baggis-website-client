@@ -33,6 +33,7 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 
 const drawerWidth = 250;
@@ -126,6 +127,14 @@ function Dashboard(props) {
                             <ListItemText primary='Make Admin' />
                         </ListItem>
                     </NavLink>
+                    <NavLink to={`${url}/manageproducts`} style={{ textDecoration: 'none', color: 'white' }}>
+                        <ListItem button>
+                            <ListItemIcon>
+                                <FontAwesomeIcon icon={faUserCog} />
+                            </ListItemIcon>
+                            <ListItemText primary='Manage Products' />
+                        </ListItem>
+                    </NavLink>
                 </div>
             }
 
@@ -144,7 +153,7 @@ function Dashboard(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex', backgroundColor: 'rgba(127,255,212,0.2)', height: '100vh' }}>
+        <Box sx={{ display: 'flex', backgroundColor: 'rgba(127,255,212,0.2)', height: '100%' }}>
             <CssBaseline />
             <AppBar
 
@@ -234,6 +243,9 @@ function Dashboard(props) {
                     </AdminRoute>
                     <AdminRoute path={`${path}/makeadmin`}>
                         <MakeAdmin />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageproducts`}>
+                        <ManageProducts />
                     </AdminRoute>
 
                 </Switch>
