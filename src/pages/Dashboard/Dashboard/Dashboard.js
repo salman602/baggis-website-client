@@ -15,18 +15,14 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
-
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
 
 import { NavLink } from 'react-router-dom';
 import { ListItemButton } from '@mui/material';
 
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faColumns, faList, faGrinStars, faSignOutAlt, faPlusCircle, faUserCog } from '@fortawesome/free-solid-svg-icons';
-
 
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MyOrders from '../MyOrders/MyOrders';
@@ -37,8 +33,6 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
-
-
 
 
 const drawerWidth = 250;
@@ -104,9 +98,6 @@ function Dashboard(props) {
                 </div>
             }
 
-
-
-
             {/* for admin */}
 
             {
@@ -146,9 +137,6 @@ function Dashboard(props) {
                     <ListItemText primary='Logout' onClick={logOut} />
                 </ListItem>
             </NavLink>
-
-
-
 
         </div>
     );
@@ -247,7 +235,6 @@ function Dashboard(props) {
                     <AdminRoute path={`${path}/makeadmin`}>
                         <MakeAdmin />
                     </AdminRoute>
-
 
                 </Switch>
             </Box>

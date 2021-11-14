@@ -17,9 +17,9 @@ const UserReview = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(order => {
-                if (order.insertedId) {
-                    alert('Your order processed successfully');
+            .then(feedback => {
+                if (feedback.insertedId) {
+                    alert('Thank you for your valueable feedback');
                     reset();
                 }
             })
