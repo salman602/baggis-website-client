@@ -15,7 +15,7 @@ const Banner = () => {
                         <Col xs={12} md={12}>
                             <img className="mw-100 rounded" src={img4} alt="" height="95%" />
 
-                            <Carousel.Caption className="banner-section mb-3">
+                            <Carousel.Caption className="banner-section mb-lg-4 mb-md-3 mb-sm-2">
                                 <h5 className="text-muted">Winter Mega Sale</h5>
                                 <h1>THE BAG</h1>
                                 <Button className="button">Save upto 50% Off</Button>
@@ -32,7 +32,7 @@ const Banner = () => {
 
                         <Col xs={12} md={12}>
                             <img className="mw-100 rounded" src={img5} alt="" height="95%" />
-                            <Carousel.Caption className="banner-section mb-3">
+                            <Carousel.Caption className="banner-section  mb-lg-4 mb-md-3 mb-sm-2">
                                 <h5 className="text-muted">Winter Mega Sale</h5>
                                 <h1>THE BAG</h1>
                                 <Button className="button">Save upto 50% Off</Button>
@@ -47,7 +47,7 @@ const Banner = () => {
                     <Row>
                         <Col xs={12} md={12}>
                             <img className="mw-100 rounded" src={img6} alt="" height="95%" />
-                            <Carousel.Caption className="banner-section mb-3">
+                            <Carousel.Caption className="banner-section  mb-lg-4 mb-md-3 mb-sm-2">
                                 <h5 className="text-muted">Winter Mega Sale</h5>
                                 <h1>THE BAG</h1>
                                 <Button className="button">Save upto 50% Off</Button>
