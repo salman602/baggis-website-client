@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 const ManageSingleOrder = (props) => {
-    const { order, setAllOrders } = props;
+    const { order } = props;
 
     const handleStatusChange = id => {
         const orderItem = { ...order }

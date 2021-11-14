@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhoneAlt, faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../../assets/logo.png';
 import './Footer.css';
 
@@ -12,9 +11,6 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 library.add(fab)
 
 const Footer = () => {
-    const phoneIcon = <FontAwesomeIcon icon={faPhoneAlt} />
-    const emailIcon = <FontAwesomeIcon icon={faEnvelope} />
-    const webIcon = <FontAwesomeIcon icon={faGlobe} />
     return (
         <div className="footer-section">
             <Container>
