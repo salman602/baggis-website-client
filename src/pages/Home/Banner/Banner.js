@@ -1,10 +1,9 @@
 import React from 'react';
 import { Button, Carousel, Container, Col, Row } from 'react-bootstrap';
-import img1 from '../../../assets/banner1.png';
-import img2 from '../../../assets/banner2.png';
-import img3 from '../../../assets/banner3.png';
-
-
+import img4 from '../../../assets/banner4.jpg';
+import img5 from '../../../assets/banner5.jpg';
+import img6 from '../../../assets/banner6.jpg';
+import './Banner.css';
 
 const Banner = () => {
     return (
@@ -13,15 +12,15 @@ const Banner = () => {
             <Carousel.Item>
                 <Container>
                     <Row>
-                        <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
-                            <div>
-                                <h2>STYLISH BACKPACK</h2>
-                                <h5 className="my-3">Browse your backpack now.</h5>
-                                <Button className="button">Browse Now</Button>
-                            </div>
-                        </Col>
-                        <Col xs={12} md={6}>
-                            <img className="mw-100 rounded" src={img2} alt="" height="95%" />
+                        <Col xs={12} md={12}>
+                            <img className="mw-100 rounded" src={img4} alt="" height="95%" />
+
+                            <Carousel.Caption className="banner-section mb-3">
+                                <h5 className="text-muted">Winter Mega Sale</h5>
+                                <h1>THE BAG</h1>
+                                <Button className="button">Save upto 50% Off</Button>
+                            </Carousel.Caption>
+
                         </Col>
                     </Row>
                 </Container>
@@ -30,17 +29,15 @@ const Banner = () => {
             <Carousel.Item >
                 <Container>
                     <Row>
-                        <Col xs={12} md={6}>
-                            <img className="mw-100 rounded" src={img3} alt="" height="95%" />
-                        </Col>
-                        <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
-                            <div>
-                                <h2>STYLISH BACKPACK</h2>
-                                <h5 className="my-3">Browse your backpack now.</h5>
-                                <Button className="button">Browse Now</Button>
-                            </div>
-                        </Col>
 
+                        <Col xs={12} md={12}>
+                            <img className="mw-100 rounded" src={img5} alt="" height="95%" />
+                            <Carousel.Caption className="banner-section mb-3">
+                                <h5 className="text-muted">Winter Mega Sale</h5>
+                                <h1>THE BAG</h1>
+                                <Button className="button">Save upto 50% Off</Button>
+                            </Carousel.Caption>
+                        </Col>
                     </Row>
                 </Container>
             </Carousel.Item>
@@ -48,15 +45,13 @@ const Banner = () => {
             <Carousel.Item >
                 <Container>
                     <Row>
-                        <Col xs={12} md={6}>
-                            <img className="mw-100 rounded" src={img1} alt="" height="95%" />
-                        </Col>
-                        <Col xs={12} md={6} className="d-flex justify-content-center align-items-center">
-                            <div>
-                                <h2>STYLISH BACKPACK</h2>
-                                <h5 className="my-3">Browse your backpack now.</h5>
-                                <Button className="button">Browse Now</Button>
-                            </div>
+                        <Col xs={12} md={12}>
+                            <img className="mw-100 rounded" src={img6} alt="" height="95%" />
+                            <Carousel.Caption className="banner-section mb-3">
+                                <h5 className="text-muted">Winter Mega Sale</h5>
+                                <h1>THE BAG</h1>
+                                <Button className="button">Save upto 50% Off</Button>
+                            </Carousel.Caption>
                         </Col>
                     </Row>
                 </Container>
@@ -67,5 +62,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
-

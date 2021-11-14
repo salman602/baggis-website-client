@@ -15,7 +15,7 @@ const Product = ({ product }) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer className="d-flex justify-content-between align-items-center">
-                    <h4>Price: ${price}</h4>
+                    <h4>Price: <span className="custom-color">${price}</span></h4>
                     <Link to={`/product/${_id}`}>
                         <Button className="button">Buy Now</Button>
                     </Link>

@@ -15,6 +15,7 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Explore from './pages/Explore/Explore/Explore';
+import About from './pages/About/About';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/home">
               <Home />
+            </Route>
+            <Route path="/about">
+              <About />
             </Route>
             <Route path="/signup">
               <Register />

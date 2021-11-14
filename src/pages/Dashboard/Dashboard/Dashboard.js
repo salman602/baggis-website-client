@@ -137,7 +137,7 @@ function Dashboard(props) {
                 </div>
             }
 
-            <NavLink to="/home" style={{ textDecoration: 'none', color: 'white' }}>
+            <NavLink to="/" style={{ textDecoration: 'none', color: 'white' }}>
                 <ListItem button>
                     <ListItemIcon>
                         <FontAwesomeIcon icon={faSignOutAlt} />

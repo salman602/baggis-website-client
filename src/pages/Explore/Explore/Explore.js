@@ -6,11 +6,13 @@ import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 
 const Explore = () => {
+    // load product using custom hook
     const [products] = useProducts();
     return (
         <div>
             <Navigation />
-            <Container>
+            <Container className="my-5">
+                <h2 className="mb-4"><span className="custom-color">Featured </span>Products</h2>
                 <Row xs={1} sm={2} md={3} className="g-4">
                     {
                         products.map(product => <Product
